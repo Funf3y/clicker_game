@@ -126,6 +126,6 @@ public class Finestra extends JFrame implements ActionListener{
     
     //it's pretty self-explanatory I think
     private boolean isWinning(){
-    	return clicks>1000;
+    	return clicks>10;
     }
 }
