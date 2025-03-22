@@ -155,15 +155,17 @@ public class Finestra extends JFrame implements ActionListener{
     	String stringOut = "";
     	
     	//adds current date and the winning score to the score file
-    	try(FileReader reader = new FileReader("score_file.txt"); Scanner scan = new Scanner(reader); PrintWriter out = new PrintWriter("score_file.txt")){
+    	try(FileReader reader = new FileReader("score_file.txt"); Scanner scan = new Scanner(reader)){
     		
     		while(scan.hasNextLine()){
     			stringOut+= scan.nextLine()+"\n";
-    			System.out.println(stringOut+" <- test");
     		}
     		
-    		stringOut+=timeStamp+" "+score+" "+greedy+"\n";
+    		stringOut+=timeStamp+" "+score+" "+greedy;
+    		
+    		PrintWriter out = new PrintWriter("score_file.txt");
     		out.println(stringOut);
+    		out.close();
     		
     	}
     	catch(IOException e){
