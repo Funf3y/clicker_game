@@ -28,3 +28,5 @@ There are three "ending" conditions and just a few rules, try to find them out b
 It means a lot :)
 
 ![Wow! Thanks!](https://github.com/Funf3y/clicker_game/blob/master/wow_thanks.gif)
+
+<sub><sup>Special thanks to my wonderful beta tester</sup></sub>

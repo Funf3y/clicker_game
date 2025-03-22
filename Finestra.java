@@ -122,7 +122,7 @@ public class Finestra extends JFrame implements ActionListener{
     	}
     }
     
-    //returns true if has pressedadd99 too many times or if the total is too high
+    //returns true if has pressed add99 too many times or if the total is too high
     private boolean isGreedy(){
     	return (count99 > 5 || total > 800);
     }
