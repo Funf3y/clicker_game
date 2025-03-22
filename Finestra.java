@@ -107,7 +107,9 @@ public class Finestra extends JFrame implements ActionListener{
         
         //checks if you have been greedy
         if(isGreedy()){
-    		//here code to save totals
+    		saveGreedy();
+        	
+        	
     		System.out.println("I told you not to be greedy!");
     		System.exit(0);
     	}
@@ -139,13 +141,22 @@ public class Finestra extends JFrame implements ActionListener{
     
     //saves the new score in the scores file (and when it was saved)
     private void saveScore(){
+    	int score = total+partialCount-count99;
+    	save(score, "");
+    }
+    
+    //prints on the scores file that you have been greedy
+    private void saveGreedy(){
+    	save(0, "Greedy!");
+    }
+    
+    private void save(int score, String greedy){
     	String timeStamp = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(Calendar.getInstance().getTime());
     	String stringOut = "";
-    	int score = total+partialCount-count99;
     	
     	//adds current date and the winning score to the score file
     	try(PrintWriter out = new PrintWriter("score_file.txt")){
-    		stringOut+=timeStamp+" "+score;
+    		stringOut+=timeStamp+" "+score+" "+greedy;
     		out.append(stringOut);
     		
     	}
