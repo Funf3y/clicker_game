@@ -27,4 +27,4 @@ There are three "ending" conditions and just a few rules, try to find them out b
 # Thank you for trying out my game!
 It means a lot :)
 
-![[wow_thanks.gif]]
+![Wow! Thanks!](https://github.com/Funf3y/clicker_game/blob/master/wow_thanks.gif)
