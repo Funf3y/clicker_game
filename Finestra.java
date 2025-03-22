@@ -1,5 +1,3 @@
-/*- Save system*/
-
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -8,25 +6,29 @@ import java.util.*;
 import java.text.SimpleDateFormat;
 
 public class Finestra extends JFrame implements ActionListener{	
-	Container c;
-	JPanel p1;
-    JPanel p2;
-    JButton add, remove, add99, reset;
-    JTextArea status;
+	private Container c;
+	private JPanel p1;
+    private JPanel p2;
+    private JButton add, remove, add99, reset;
+    private JTextArea status;
     private int clicks, total, count99, partialCount;
     
     
     public Finestra(){
+    	//let there be light (me when opening a window)
     	super("Clicker game");    	
     	this.setSize(500,500);
     	c=this.getContentPane();
         p1= new JPanel();
         p2= new JPanel();
         
+        //initializing counters
         clicks = 0;
         total = 0;
-        count99=0;
+        count99 = 0;
+        partialCount = 0;
         
+        //building and adding elements to the window
     	c.add(p1);
     	p1.setLayout(new GridLayout(2,1));
     	status = new JTextArea("Welcome to the clicker game!\n(don't get greedy)\n");
@@ -44,6 +46,7 @@ public class Finestra extends JFrame implements ActionListener{
     	p2.add(add99);
     	p2.add(reset);
     	
+    	//adding Action Listeners (sometimes my genius in commenting is almost frightening)
     	add.addActionListener(this);
     	remove.addActionListener(this);
     	add99.addActionListener(this);
@@ -134,13 +137,13 @@ public class Finestra extends JFrame implements ActionListener{
     	return clicks>999;
     }
     
-    //reads, copies and saves the scores in the scores file
-    
+    //saves the new score in the scores file (and when it was saved)
     private void saveScore(){
     	String timeStamp = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(Calendar.getInstance().getTime());
     	String stringOut = "";
     	int score = total+partialCount-count99;
     	
+    	//adds current date and the winning score to the score file
     	try(PrintWriter out = new PrintWriter("score_file.txt")){
     		stringOut+=timeStamp+" "+score;
     		out.append(stringOut);
