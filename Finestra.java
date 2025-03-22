@@ -114,7 +114,7 @@ public class Finestra extends JFrame implements ActionListener{
     		
     		saveScore();
     		
-    		System.out.println("Congrats!\nYou have been greedy just the right amount to keep playing :)\nYour prize is winning the game (and losing The Game)\n\n\nThank you for playing my silly game :))");
+    		System.out.println("Congrats!\nYou have been greedy just the right amount to keep playing :)\nYour prize is winning the game\n\n\nThank you for playing my silly game :))");
     		System.exit(0);
     	}
     }
@@ -131,7 +131,7 @@ public class Finestra extends JFrame implements ActionListener{
     
     //it's pretty self-explanatory I think
     private boolean isWinning(){
-    	return clicks>10;
+    	return clicks>999;
     }
     
     //reads, copies and saves the scores in the scores file
