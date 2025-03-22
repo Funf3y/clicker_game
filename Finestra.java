@@ -4,6 +4,8 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.io.*;
+import java.util.*;
+import java.text.SimpleDateFormat;
 
 public class Finestra extends JFrame implements ActionListener{	
 	Container c;
@@ -109,6 +111,9 @@ public class Finestra extends JFrame implements ActionListener{
     	
     	//checks if you have won :)
     	if(isWinning()){
+    		
+    		saveScore();
+    		
     		System.out.println("Congrats!\nYou have been greedy just the right amount to keep playing :)\nYour prize is winning the game (and losing The Game)\n\n\nThank you for playing my silly game :))");
     		System.exit(0);
     	}
@@ -118,7 +123,7 @@ public class Finestra extends JFrame implements ActionListener{
     private boolean isGreedy(){
     	return (count99 > 5 || total > 800);
     }
-    
+                                                                                    
     //returns if the total is too low (can't be too generous)
     private boolean isLow(){
     	return total<-99;
@@ -127,5 +132,23 @@ public class Finestra extends JFrame implements ActionListener{
     //it's pretty self-explanatory I think
     private boolean isWinning(){
     	return clicks>10;
+    }
+    
+    //reads, copies and saves the scores in the scores file
+    
+    private void saveScore(){
+    	String timeStamp = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(Calendar.getInstance().getTime());
+    	String stringOut = "";
+    	int score = total+partialCount-count99;
+    	
+    	try(PrintWriter out = new PrintWriter("score_file.txt")){
+    		stringOut+=timeStamp+" "+score;
+    		out.append(stringOut);
+    		
+    	}
+    	catch(IOException e){
+    		System.out.println("Something wrong with the IO happened. Whoopsie");
+    		System.exit(1);
+    	}
     }
 }
