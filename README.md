@@ -27,6 +27,10 @@ There are three "ending" conditions and just a few rules, try to find them out b
 # Thank you for trying out my game!
 It means a lot :)
 
+<div style="text-align: center;">
+
 ![Wow! Thanks!](https://github.com/Funf3y/clicker_game/blob/master/wow_thanks.gif)
+
+</div>
 
 <sub><sup>Special thanks to my wonderful beta tester</sup></sub>
