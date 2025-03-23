@@ -115,7 +115,7 @@ public class Finestra extends JFrame implements ActionListener{
         }
         
         if(isGreedy()){
-    		saveGreedy();
+        	save(0, "Greedy!");
         	
         	
     		System.out.println("I told you not to be greedy!");
@@ -147,11 +147,12 @@ public class Finestra extends JFrame implements ActionListener{
     
     private void saveScore(){
     	int score = total+partialCount-count99;
-    	save(score, "");
-    }
-    
-    private void saveGreedy(){
-    	save(0, "Greedy!");
+    	if(score>999){
+    		save(score, "True win");
+    	}
+    	else{
+    		save(score, "");
+    	}
     }
     
     private void save(int score, String greedy){
