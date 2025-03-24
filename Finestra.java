@@ -18,7 +18,8 @@ public class Finestra extends JFrame implements ActionListener{
     
     public Finestra(){
     	//let there be light (me when opening a window)
-    	super("Clicker game");    	
+    	super("Clicker game");
+    	setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     	this.setSize(500,500);
     	c=this.getContentPane();
         p1= new JPanel();
