@@ -143,12 +143,12 @@ public class Finestra extends JFrame implements ActionListener{
     }
     
     private boolean isWinning(){
-    	return clicks>999;
+    	return clicks>1000;
     }
     
     private void saveScore(){
-    	int score = total+partialCount-count99;
-    	if(score>999){
+    	int score = total+clicks-count99;
+    	if(score<1000){
     		save(score, "True win");
     	}
     	else{
