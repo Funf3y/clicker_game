@@ -7,3 +7,5 @@ Dev & friends scores (try to beat us >:)):
 2025/03/26 17:17:52 Ghengi18 543 
 2025/03/26 17:24:16 Ghengi18 2 True win
 --------------------------------------------
+2025/06/13 14:39:17 YetAnotherGuy 0 Greedy!
+2025/06/13 14:47:10 YetAnotherGuy 1742
